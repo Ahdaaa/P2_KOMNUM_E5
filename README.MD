@@ -1,5 +1,5 @@
 
-# P1_Komnum_E5
+# P2_Komnum_E5
 
 Anggota Kelompok 5 :
   1. Ahda Filza Ghaffaru, 5025211144
