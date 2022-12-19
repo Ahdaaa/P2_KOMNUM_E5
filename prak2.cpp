@@ -1,12 +1,11 @@
 #include <iostream>
 #include <math.h>
 #include <vector>
-#include <array>
 
 using namespace std;
 
 double function(double x){ // masukkan fungsi integral disini
-    return 1/x;
+    return 1.75 * pow(x, 1.75);
 }
 
 double getH(double boundDiff, int rowIndex){ // H untuk operasi CTR
@@ -69,6 +68,6 @@ int main(){
     }
 
    for (int i = 0; i < store.size(); i++){
-        cout << store.at(i) << endl;
+        cout << store.at(i) << endl; // hasil akhir ada di index akhir dari vector store
    }
 }
