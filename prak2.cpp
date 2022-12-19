@@ -67,7 +67,15 @@ int main(){
         }
     }
 
-   for (int i = 0; i < store.size(); i++){
-        cout << store.at(i) << endl; // hasil akhir ada di index akhir dari vector store
-   }
+    rowIndex = 1, colIndex = 1;
+    for (int i = 0; i < store.size(); i++){
+            cout << store.at(i) << " "; // hasil akhir ada di index akhir dari vector store
+
+            if (colIndex == rowIndex) { // print dalam bentuk matriks romberg
+                ++rowIndex;
+                colIndex = 1;
+                cout << endl;}
+            else ++colIndex;
+
+    }
 }
