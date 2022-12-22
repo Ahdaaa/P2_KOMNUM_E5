@@ -4,7 +4,6 @@
 #include <vector>
 using namespace std;
 
-bool iterationDone = false;
 
 bool double_equals(double a, double b, double epsilon = 0.001){
     //cek dua variable double bernilai sama dengan pembulatan 0.001
