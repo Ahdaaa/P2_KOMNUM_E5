@@ -12,7 +12,7 @@ Screenshot Jalannya Program:
 
 Penjelasan Singkat:
 
-1. Fungsi yang kami buat ada 5 yang pertama fungsi untuk Integral yang kami gunakan adalah : " 1,75x^1,75 ", lalu fungsi doubleEquals untuk mengecek apakah hasil iterasi ke N sama dengan hasil iterasi ke N-1, yang kedua adalah fungsi getH untuk mendapatkan h yang digunakan pada fungsi CTR, lalu ada fungsi romberg, dan fungsi CTR. 
+1. Fungsi yang kami buat ada 5 yang pertama fungsi untuk Integral yang kami gunakan adalah : " <sub>1.75x^1.75</sub> ", lalu fungsi doubleEquals untuk mengecek apakah hasil iterasi ke N sama dengan hasil iterasi ke N-1, yang kedua adalah fungsi getH untuk mendapatkan h yang digunakan pada fungsi CTR, lalu ada fungsi romberg, dan fungsi CTR. 
 2. Langkah pertama adalah memasukkan batas2 integral dan iterasi yang diinginkan.
 3. Lalu looping barisnya sebanyak iterasi karena banyak baris matriks nya pasti sebesar iterasinya.
 4. Lalu kami nestedLoop didalam looping baris tadi sebagai kolomnya dengan batas kolomnya sama dengan barisnya.
