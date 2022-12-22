@@ -18,5 +18,4 @@ Penjelasan Singkat:
 4. Lalu kami nestedLoop didalam looping baris tadi sebagai kolomnya dengan batas kolomnya sama dengan barisnya.
 5. Lalu disetiap isi looping kolom kami cek jika kolom index nya 1 maka gunakan fungsi CTR, jika kolom lebih dari 1 gunakan fungsi romberg dan masukkan hasilnya ke dalam vector.
 6. Lalu pada setiap looping baris kami cek apakah hasil iterasi ke N sama dengan hasil iterasi ke N-1 dengan fungsi doubleEquals, jika benar sama maka akan langsung kami break karena hasil setelahnya akan tetap sama dan jika terus dilanjutkan hanya akan membuang-buang waktu compiling.
-
 7.Setelah looping selesai maka hasilnya adalah ada pada nilai di index terakhir vector. lalu print nilai tersebut.
