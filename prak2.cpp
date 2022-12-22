@@ -1,8 +1,15 @@
 #include <iostream>
+#include <stdbool.h>
 #include <math.h>
 #include <vector>
-
 using namespace std;
+
+bool iterationDone = false;
+
+bool double_equals(double a, double b, double epsilon = 0.001){
+    //cek dua variable double bernilai sama dengan pembulatan 0.001
+    return abs(a - b) < epsilon;
+}
 
 double function(double x){ // masukkan fungsi integral disini
     return 1.75 * pow(x, 1.75);
@@ -43,11 +50,12 @@ int main(){
     cout << "Input iteration: "; // jumlah baris matriks
     cin >> iteration;
    
-    int rowIndex = 1, colIndex = 1;
+    int rowIndex = 2, colIndex = 1;
     vector<double> store;
     double res;
 
-    for (int i = 0; i < iteration; i++){
+    store.push_back(CTR(upperBound, lowerBound, 1));
+    while(iteration-- && !iterationDone){
         int temp = rowIndex;
         for (int j = 0; j < temp; j++){
             int size = store.size();
@@ -59,23 +67,18 @@ int main(){
                 res = romberg(store.at(size-rowIndex), store.at(size-1), colIndex);
                 store.push_back(res);
             }
-
+            
             if (colIndex == rowIndex) {
+                //cek jika ujung rowIndex i dengan rowIndex i-1 bernilai sama atau tidak
+                if(double_equals(store.at(store.size()-1), store.at(store.size()-rowIndex-1))){ 
+                    iterationDone = true;
+                    break;
+                }
                 ++rowIndex;
-                colIndex = 1;}
+                colIndex = 1;
+            }
             else ++colIndex;
         }
     }
-
-    rowIndex = 1, colIndex = 1;
-    for (int i = 0; i < store.size(); i++){
-            cout << store.at(i) << " "; // hasil akhir ada di index akhir dari vector store
-
-            if (colIndex == rowIndex) { // print dalam bentuk matriks romberg
-                ++rowIndex;
-                colIndex = 1;
-                cout << endl;}
-            else ++colIndex;
-
-    }
+    cout << store.at(store.size()-1);
 }
