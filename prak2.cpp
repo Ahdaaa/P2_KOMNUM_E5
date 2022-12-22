@@ -50,14 +50,14 @@ int main(){
     cout << "Input iteration: "; // jumlah baris matriks
     cin >> iteration;
    
-    int rowIndex = 2, colIndex = 1;
+    
     vector<double> store;
     double res;
 
     store.push_back(CTR(upperBound, lowerBound, 1));
-    while(iteration-- && !iterationDone){
-        int temp = rowIndex;
-        for (int j = 0; j < temp; j++){
+    for (int rowIndex = 2; rowIndex <= iteration; rowIndex++){
+        
+        for (int colIndex = 1; colIndex <= rowIndex; colIndex++){
             int size = store.size();
         
             if (colIndex == 1){ // lakukan operasi CTR jika indeks kolom 1
@@ -67,18 +67,12 @@ int main(){
                 res = romberg(store.at(size-rowIndex), store.at(size-1), colIndex);
                 store.push_back(res);
             }
-            
-            if (colIndex == rowIndex) {
-                //cek jika ujung rowIndex i dengan rowIndex i-1 bernilai sama atau tidak
-                if(double_equals(store.at(store.size()-1), store.at(store.size()-rowIndex-1))){ 
-                    iterationDone = true;
-                    break;
-                }
-                ++rowIndex;
-                colIndex = 1;
-            }
-            else ++colIndex;
+        }
+        if(double_equals(store.at(store.size()-1), store.at(store.size()-rowIndex-1))){ 
+            break;
         }
     }
-    cout << store.at(store.size()-1);
+    cout << store.at(store.size()-1) << endl;
+    
+    
 }
