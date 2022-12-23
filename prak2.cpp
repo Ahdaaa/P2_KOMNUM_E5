@@ -67,7 +67,7 @@ int main(){
                 store.push_back(res);
             }
         }
-        printf("Iteration %d error: %.3f %%\n", rowIndex, ((store.at(store.size()-rowIndex-1)-store.at(store.size()-1))/store.at(store.size()-rowIndex-1))*100);
+        printf("Iteration %d error: %.3f %%\n", rowIndex-1, ((store.at(store.size()-rowIndex-1)-store.at(store.size()-1))/store.at(store.size()-rowIndex-1))*100);
         
         if(double_equals(store.at(store.size()-1), store.at(store.size()-rowIndex-1))){ 
             break;
